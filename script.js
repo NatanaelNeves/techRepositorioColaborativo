@@ -2,7 +2,7 @@ let nome =  'natan'
 
 let numero 
 
-// alert('olá ' +  nome)
+alert('olá ' +  nome)
 
 console.log(numero)
 
