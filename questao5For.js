@@ -13,7 +13,7 @@ let incrementoCompra = 100.00
 
 for(let i=min ; i <= max; i++){
     let valorFinal = valorCompra - (valorCompra* i/100)
-    console.log(`Valor da compra: ${valorCompra}- ${i}%-  Valor Final: ${valorFinal}`)
+    console.log(`Valor da compra: ${valorCompra.toFixed(2)}- ${i}%-  Valor Final: ${valorFinal.toFixed(2)}`)
 
 
 }
