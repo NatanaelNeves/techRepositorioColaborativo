@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <h1>Titulo 1</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, error.</p>
+    <p class="paragrafo">Lorem ipsum dolor sit amet.</p>
+
+    <ul>
+        <l1>coisa</l1>
+        <l1>coisa</l1>
+        <l1 id="especial">coisa</l1>
+    </ul>
+
+    <div>
+        <h2>Titulo 2</h2>
+    </div>
+
+    <script>
+        //mais generalista = tag
+        let paragrafos= document.getElementsByTagName("p") // []
+        let p= document.querySelector('p') // seleciona o primeiro elemento com o seletor indicado
+        let todosOsParagrafos= document.querySelectorAll('p')// todos os elementos com o seletor indicado
+
+        //mais espeifica que a tag
+        let paragrafoComClasse = document.getElementsByClassName("paragrafoClasse")
+
+        let pClasse= document.querySelector('.paragrafoClasse') // primeira ocorrencia
+
+        let psClasse= document.querySelectorAll('.paragrafoClasse') // []
+
+        // busca uma classe que nao existe- array vazio
+        let paragrafoOutro = document.getElementsByClassName('paragrafoOutro')
+
+        // metodo mais espeicifico- um unico elemento 
+        let item= document.getElementById('especial')
+        //manipulação da propriedade Css
+        item.style.color= 'red'
+        //manipulação do conteudo da TAG
+        item.innerHTML= 'mudei com JS'
+
+        let l1 = document.querySelector('#especial')
+
+        let div= document.querySelector('div')
+        div.innerHTML+= '<h3> Meu titulo 3 </h3>'
+    </script>
+</body>
+</html>
