@@ -20,6 +20,14 @@
         <h2>Titulo 2</h2>
     </div>
 
+    <!-- objeto do tipo input, nao contem atributo de inner html, contem value -->
+    <FORM action="#">
+        <input type="text" id="nome" placeholder="Digite seu nome">
+        <input type="checkbox" id="turnoManha" name="turno" value="manhã"> <label for="turnoManha">Manhã</label>
+        <input type="checkbox" name="turno" id="turnoTarde" value="Tarde"> <label for="turnoTarde">Tarde</label>
+        <button onclick="dizerOi()">DIZER OI</button>
+    </FORM>
+
     <script>
         //mais generalista = tag
         let paragrafos= document.getElementsByTagName("p") // []
@@ -47,6 +55,10 @@
 
         let div= document.querySelector('div')
         div.innerHTML+= '<h3> Meu titulo 3 </h3>'
+
+        function dizerOi(){
+            alert('OI!')
+        }
     </script>
 </body>
 </html>

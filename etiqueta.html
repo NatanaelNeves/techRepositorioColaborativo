@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEIA</title>
+</head>
+<body>
+    <h1>SEIA Moda e Varejo</h1>
+
+    <h3>Calculadora de desconto:</h3>
+    <form action="#">
+        <label for="valor">Valor da peça:</label>
+        <input type="number" id="valor" placeholder="Digite o valor"> <br> <br>
+        
+        <label for="qtd">Quantidade:</label>
+        <input type="number" id="qtd" placeholder="Informe a quantidade"> <br> <br>
+
+        <label for="cor">Cor da etiqueta:</label><br>
+        <input name="cor" type="radio" id="vermelho">
+        <label for="vermelho">Vermelho</label> <br>
+        <input name="cor" type="radio" id="verde">
+        <label for="verde">Verde</label> <br>
+        <input name="cor" type="radio" id="amarelo">
+        <label for="amarelo">Amarelo</label> <br> <br>
+
+        <button type="button" onclick="calcularDesconto()">Calcular desconto</button>
+        <div id="desconto"></div>
+    </form>
+
+    <script src="etiqueta.js"></script>
+</body>
+</html>
