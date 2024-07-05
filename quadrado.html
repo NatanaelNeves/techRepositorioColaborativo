@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>caixas</title>
+    <style>
+
+    div{
+        display: flex;
+    }
+     div, button{
+        margin: 10px;
+     }
+    .container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .vermelha{
+        background-color: red;
+    }
+    .azul{
+        background-color: blue;
+    }
+
+    .verde{
+        background-color: green;
+    }
+
+    button{
+        color: white;
+        min-width: 200px;
+        height: 50px;
+        border: 1px solid white;
+    }
+
+    .quadro{
+        width: 600px;
+        height: 400px;
+        border: 2px solid black;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+    <div class="quadro" onmouseover="mudarCor('#ffffff')">
+
+    </div>
+    <div>
+        <button class="vermelha" onclick="mudarCor('red')">Vermelho</button>
+        <button class="verde" onclick="mudarCor('green')" >Verde</button>
+        <button class="azul" onclick="mudarCor('blue')">Azul</button>
+    </div>
+
+    </div>
+
+    <script src="quadrado.js"></script>
+</body>
+</html>
