@@ -7,3 +7,11 @@ let quadro = document.querySelector('.quadro')
 function mudarCor(cor){
     quadro.style.background= cor
 }
+
+let elementoFilho = document.createElement('p')
+
+novoParagrafo.innerHTML = 'texto inserido no inner HTML de um paragrafo criado com o createElement do objeto document'
+
+let elementoPai = document.querySelector('body')
+
+elementoPai.appendChild(elementoFilho)

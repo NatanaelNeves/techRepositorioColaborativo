@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div>
+
+    </div>
+    
+    <script src="card.js">
+        let elementoPai = document.querySelector('div');
+
+        let titulo= document.createElement('h1');
+        titulo.innerHTML = 'Título criado com JavaScript';
+
+        let lista = document.createElement('ul');
+        let idade = document.createElement('li');
+        let endereco = document.createElement('li');
+        idade.innerHTML = 'Idade: 25';
+        endereco.innerHTML = 'Endereço: Rua das Flores, 123';
+
+        lista.appendChild(idade);
+        lista.appendChild(endereco);
+
+        elementoPai.appendChild(titulo);
+        elementoPai.appendChild(lista); 
+
+        let numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+        function montarTitulo(item, pai) {
+            let titulo = document.createElement('h1');
+            titulo.innerHTML = item;
+            pai.appendChild(titulo);
+        }
+
+        numeros.forEach((num)=> montarTitulo(num, elementoPai));
+
+    </script>
+</body>
+</html>
