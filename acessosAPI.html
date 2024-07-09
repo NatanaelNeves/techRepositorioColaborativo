@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultador de CEP</title>
+</head>
+<body style="background-color: black;">
+
+    <!-- crie um campo de imput para o usuario digitar o cep que ira consultar na api. mostre todas as informacoes do cep (objeto inetiero) no console. trate o erro de entrada do ususario -->
+    <h1 style="color: yellow;">Consultar CEP</h1>
+
+    <h4 style="color: yellow;">Informe seu CEP:</h4>
+    <input type="text" id="cepInput" placeholder="Digite o CEP sem traço">
+    <button onclick="consultarCEP()">Consultar</button>
+
+    <script>
+        function consultarCEP() {
+            const cep = document.getElementById('cepInput').value;
+            if (cep.length !== 8) {
+                console.log('CEP inválido');
+                return;
+            }
+
+            fetch(`https://viacep.com.br/ws/${cep}/json/`)
+                .then((resposta) => resposta.json())
+                .then((objeto) => console.log(objeto))
+                .catch((erro) => console.log(erro.message));
+        }
+
+    </script>
+</body>
+</html>

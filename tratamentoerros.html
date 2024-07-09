@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tratamento de erro</title>
+</head>
+<body>
+    <script>
+        // try{
+        //     //todo codigo possivel de erro
+        //     let numero = Number(prompt('Digite apenas 1 ou 2'))
+        //     if(numero == 1 || numero == 2){
+        //         alert('Número válido')
+        //     } 
+        //     else{
+        //         throw new Error('Número inválido. Digite 1 ou 2')
+        //     }
+
+        // } catch(error){
+        //     console.log( error.message)
+
+        // }
+
+        let valorProduto = Number(prompt('Digite o valor do produto'));
+        let corEtiqueta = prompt(`Digite a cor da etiqueta do produto:
+       - vermelho
+       - amarelo
+       - azul
+        `);
+
+        if (corEtiqueta === 'vermelho' || corEtiqueta === 'amarelo' || corEtiqueta === 'azul') {
+            alert(`O valor do produto é R$ ${valorProduto},00 e a cor da etiqueta é ${corEtiqueta}`);
+        } else {
+            throw new Error('Cor da etiqueta inválida. Digite vermelho, amarelo ou azul');
+        }
+    </script>
+</body>
+</html>
