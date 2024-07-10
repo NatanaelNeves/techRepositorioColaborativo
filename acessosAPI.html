@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Consultador de CEP</title>
 </head>
-<body style="background-color: black;">
+<body style="background-color: rgba(0, 0, 0, 0.447);">
 
     <!-- crie um campo de imput para o usuario digitar o cep que ira consultar na api. mostre todas as informacoes do cep (objeto inetiero) no console. trate o erro de entrada do ususario -->
     <h1 style="color: yellow;">Consultar CEP</h1>
@@ -14,19 +14,46 @@
     <input type="text" id="cepInput" placeholder="Digite o CEP sem traço">
     <button onclick="consultarCEP()">Consultar</button>
 
-    <script>
-        function consultarCEP() {
-            const cep = document.getElementById('cepInput').value;
-            if (cep.length !== 8) {
-                console.log('CEP inválido');
-                return;
-            }
+    <div id="resultado">
+        <h4 style="color: yellow;">Informações do CEP:</h4>
+        <p style="color: white;" class="cep">CEP: </p>
+        <p style="color: white;" class="logradouro">Logradouro: </p>
+        <p style="color: white;" class="complemento">Complemento: </p>
+        <p style="color: white;" class="bairro">Bairro: </p>
+        <p style="color: white;" class="cidade">Cidade: </p>
+        <p style="color: white;" class="estado">Estado: </p>
 
-            fetch(`https://viacep.com.br/ws/${cep}/json/`)
-                .then((resposta) => resposta.json())
-                .then((objeto) => console.log(objeto))
-                .catch((erro) => console.log(erro.message));
+    </div>
+
+ 
+    <script>
+       
+        async function consultarCEP() {
+            let cep = document.getElementById('cepInput').value;
+            let url = `https://viacep.com.br/ws/${cep}/json/`;
+            try {
+                let response = await fetch(url);
+                let data = await response.json();
+                
+                let resultado = document.getElementById('resultado');
+                resultado.style.display = 'block';
+                resultado.querySelector('.cep').innerHTML = `CEP: ${data.cep}`;
+                resultado.querySelector('.logradouro').innerHTML = `Logradouro: ${data.logradouro}`;
+                resultado.querySelector('.complemento').innerHTML = `Complemento: ${data.complemento}`;
+                resultado.querySelector('.bairro').innerHTML = `Bairro: ${data.bairro}`;
+                resultado.querySelector('.cidade').innerHTML = `Cidade: ${data.localidade}`;
+                resultado.querySelector('.estado').innerHTML = `Estado: ${data.uf}`;
+
+                
+            } catch (error) {
+                console.error('Erro ao consultar CEP:', error);
+                
+            }
         }
+       
+
+    
+    
 
     </script>
 </body>
